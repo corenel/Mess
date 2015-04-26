@@ -1,0 +1,22 @@
+import cv2
+import numpy as np
+
+def showimg(name, img):
+    cv2.namedWindow(name)
+    cv2.imshow(name, img)
+
+img = cv2.imread('./img/Image7.yuv.WHITE.png')
+
+img_median = cv2.medianBlur(img, 5)
+showimg('Median Filter', img_median)
+
+img_edges = cv2.Canny(img,50,200,apertureSize = 3)
+showimg('img_edges',img_edges)
+
+lines = cv2.HoughLinesP(img_edges,1,np.pi/180,100,100,10)
+for x1,y1,x2,y2 in lines[0]:
+    cv2.line(img,(x1,y1),(x2,y2),(0,255,0),2)
+print lines
+
+showimg('Lines', img)
+cv2.waitKey(0)
