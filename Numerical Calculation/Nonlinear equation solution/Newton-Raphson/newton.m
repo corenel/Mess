@@ -1,6 +1,6 @@
-function [iter,x,err,Solutions] = fixpt(func,x0,xtol,maxiter)
+function [x_r,err,iter, Solutions] = newton(func,x0,xtol,maxiter)
 % Find a fixed point of the function.
-% Given a function and a starting point, find a fixed-point of the function: i.e. where func(x0) == x0.
+% Newton-Raphson method to find a zero of the function f(x)..
 % Parameters:
 % - func : function
 %           Function to evaluate.
@@ -16,7 +16,7 @@ function [iter,x,err,Solutions] = fixpt(func,x0,xtol,maxiter)
 % - err : the error in the approximation
 % - Solutions : the list of solutions.
 % Example:
-% >> [iter,x,err,Solutions] = fixpt('1 + 1 / x',1,1e-8,500);
+% >> [iter,x,err,Solutions] = newton('1 + 1 / x',1,1e-8,500);
 
 % Check inputs and initialize
 if nargin < 4
@@ -26,14 +26,16 @@ if nargin < 4
     if nargin < 2
       x0 = 1;
       if nargin < 1
-        error(message('MATLAB:fixpt:NotEnoughInputs'));
+        error('MATLAB:fixpt', 'No Enough Inputs.');
       end  
     end
   end
 end
 
 % Construct inline function
-g = inline(func);
+syms x;
+func = sym(func);
+g = inline(x - func/diff(func));
 
 % Initialize solutions
 Solutions(1) = x0;
@@ -43,7 +45,7 @@ for iter = 2 : maxiter
     Solutions(iter) = feval(g, Solutions(iter - 1));
     err = abs(Solutions(iter) - Solutions(iter - 1));
     relerr = err / (abs(Solutions(iter)) + eps);
-    x = Solutions(iter);
+    x_r = Solutions(iter);
     if (err < xtol) | (relerr < xtol)
         break;
     end
@@ -53,7 +55,7 @@ end
 if iter == maxiter
     disp('Maximum number of iterations exceeded.')
 end
-Solutions=Solutions';
 
 % Plot the graph
+Solutions=Solutions';
 plot(Solutions);
