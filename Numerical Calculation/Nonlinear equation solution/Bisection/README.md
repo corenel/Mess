@@ -16,4 +16,4 @@ Basic bisection routine to find a zero of the function f(x) between the x_l and 
 * iter : the times of iteration.
 
 ## Example:
->> [x_r, err, iter]=bisect('- (25*x^4)/216 + 5*x^2 - 30',0.1,5.9,1e-8);
+`>> [x_r, err, iter]=bisect('- (25*x^4)/216 + 5*x^2 - 30',0.1,5.9,1e-8);`

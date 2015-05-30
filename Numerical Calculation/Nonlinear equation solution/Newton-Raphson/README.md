@@ -19,4 +19,4 @@ Newton-Raphson method to find a zero of the function f(x).
 * Solutions : the list of solutions.
 
 # Example:
->> [iter,x,err,Solutions] = newton('1 + 1 / x',1,1e-8,500);
+`>> [iter,x,err,Solutions] = newton('1 + 1 / x',1,1e-8,500);`

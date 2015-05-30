@@ -22,4 +22,4 @@ Given a function and a starting point, find a fixed-point of the function: i.e. 
 * Solutions : the list of solutions.
 
 ## Example:
-    >> [iter,x,err,Solutions] = fixpt('1 + 1 / x',1,1e-8,500);
+`>> [iter,x,err,Solutions] = fixpt('1 + 1 / x',1,1e-8,500);`
