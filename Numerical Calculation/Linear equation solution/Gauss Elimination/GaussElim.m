@@ -29,8 +29,8 @@ function x = GaussElim(A,b)
             end 
             b(i,1) = b(i,1) - factor * b(k); 
         end 
-        A    % Print A in every step
-        b    % Print b in every step
+        %A    % Print A in every step
+        %b    % Print b in every step
     end 
     
     % Calculate each variable
