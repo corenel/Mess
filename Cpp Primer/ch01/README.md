@@ -36,7 +36,6 @@ ALL DONE!
 	/* There are some wrong comments.
 	/**/ CANNOT nest. 
 	*/
-}
 ```
 GCC error message is 
 ```
