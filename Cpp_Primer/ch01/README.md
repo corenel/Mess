@@ -81,3 +81,25 @@ And the output is:
 /**/ */ /* 
 ```
 
+# Exercise 1.12
+```
+int sum = 0;
+for (int i = -100; i <= 100; ++i)
+  sum += i;
+```
+
+Calculate sum of -100 to 100.
+
+And the sum is 0.
+
+# Exercise 1.14
+
+> Compare and contrast the loops that used a for with those using a while. Are there advantages or disadvantages to using either form?
+
+If you need a variable to increace from a number to another in the body, you should use `for` loop. If not, `while` loop.
+
+# Exercise 1.15
+
+> Write programs that contain the common errors discussed in the box on page 16. Familiarize yourself with the messages the compiler generates.
+
+JUST READ IT!
