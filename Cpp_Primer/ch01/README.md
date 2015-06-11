@@ -103,3 +103,51 @@ If you need a variable to increace from a number to another in the body, you sho
 > Write programs that contain the common errors discussed in the box on page 16. Familiarize yourself with the messages the compiler generates.
 
 JUST READ IT!
+
+# Exercise 1.17
+
+> What happens in the program presented in this section if the input values are all equal? What if there are no duplicated values?
+
+If the input values are all equal, the output will be only a  line to show the count of the number.
+
+If there are no duplicated values, there are lines whose amount is just the same as amount of the numbers you input.
+
+# Exercise 1.18
+
+> Compile and run the program from this section giving it only equal values as input. Run it again giving it values in which no number is repeated.
+
+```
+yuthon@ubuntu:~/Github/Mess/Cpp_Primer/ch01$ ./a.out
+12
+12
+12
+12
+12
+12
+12
+12
+12
+12
+^E
+12 occurs 10times.
+yuthon@ubuntu:~/Github/Mess/Cpp_Primer/ch01$ ./a.out
+1
+2
+1 occurs 1times.
+3
+2 occurs 1times.
+4
+3 occurs 1times.
+5
+4 occurs 1times.
+6
+5 occurs 1times.
+7
+6 occurs 1times.
+8
+7 occurs 1times.
+9
+8 occurs 1times.
+^E
+9 occurs 1times.
+```
